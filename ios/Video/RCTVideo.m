@@ -509,6 +509,7 @@ static int const RCTVideoUnset = -1;
     ? [NSURL URLWithString:uri]
     : [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:uri ofType:type]];
   NSMutableDictionary *assetOptions = [[NSMutableDictionary alloc] init];
+  [assetOptions setValue:@"video/mp4;" forKey:@"AVURLAssetOutOfBandMIMETypeKey"];
   
   if (isNetwork) {
     NSDictionary *headers = [source objectForKey:@"requestHeaders"];
